@@ -19,12 +19,11 @@
 # without interfering with the regular build/test.
 
 name "angrychef"
+friendly_name "Angry Chef Client"
 maintainer "Chef Software, Inc."
 homepage "http://www.getchef.com"
 
-install_path "/opt/angrychef"
-
-build_iteration 4
+build_iteration 1
 build_version do
   # Use chef to determine the build version
   source :git, from_dependency: 'chef'
@@ -32,6 +31,15 @@ build_version do
   # Set a Rubygems style version
   output_format :git_describe
 end
+
+install_path    "/opt/angrychef"
+
+resources_path File.join(files_path, "chef")
+mac_pkg_identifier "com.getchef.pkg.angrychef"
+
+# You can pin the components to specific versions as below
+# override :chef, version: "11.12.4"
+# override :ohai, version: "7.0.4"
 
 dependency "preparation"
 dependency "chef"

@@ -36,7 +36,7 @@ mac_pkg_identifier "com.getchef.pkg.chef"
 
 # You can pin the components to specific versions as below
 override :chef, version: "11.12.8"
-override :berkshelf, version: "v3.1.3"
+override :berkshelf, version: "v3.1.4"
 # override :ohai, version: "7.0.4"
 
 dependency "preparation"
